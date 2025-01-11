@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name "viewport" content="width=device-width, initial-scale=1.o">
+    <title> Зворотний зв'язок</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmJ3GodT7dQ8DYcmlX4UUbJ6zQ9QcesKtMlA&s"
+            width="120px" height="90px">
+        <nav>
+            <a href="index.html" class="active"> Рецепти </a>
+            <a href="contact.html"> Зворотний зв'язок</a>
+        </nav>
+        <h1>Зворотний зв'язок</h1>
+        <input type="text" id="search" placeholder="Пошук рецептів...">
+    </header>
+    <main>
+        <section class="contact-form">
+            <h2>Залиште ваші відгуки та пропозиції</h2>
+            <form id="feedback-form">
+                <label for="name">Ваше ім'я</label>
+                <input type="text" id="name" name="name" required placeholder="Введіть ваше ім'я">
+
+                <label for="email">Електронна пошта</label>
+                <input type="text" id="email" name="email" required placeholder="example@gmail.com">
+
+                <label for="message">повідомлення</label>
+                <textarea type="text" id="message" name="message" rows="5" required placeholder="Ваше повідомлення"></textarea>
+
+                <button type="submit">Відправити</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Кулінарна книга. Всі права захищені.</p>
+    </footer>
+    <script src="contact.js"></script>
+    </body>
+    </html>

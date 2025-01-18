@@ -5,14 +5,38 @@ const recipes = [
     {id: 4, title: "Борщ", description: "Український червоний борщ", image:"https://torchyn.ua/sites/default/files/2023-01/borsh-rebra.jpg" , link:"borsch.html"}
 ];
 
-const recipelist = document.getElementById("recipe-list");
+const recipeList = document.getElementById("recipe-list");
 const searchInput = document.getElementById("search");
 
-function displayRecipes(filteredRecipes) {
-    recipelist.innerHTML = "";
+function displayRecipes(filteredRecipes){
+    recipeList.innerHTML = "";
     filteredRecipes.forEach((recipe) =>{
         const recipeCard = document.createElement("div");
-        recipeCard.classList.add("recipe=card");
-        recipeCard,innerHTML = ``
-    }
+        recipeCard.classList.add("recipe-card");
+        recipeCard.innerHTML = `
+            <img src="${recipe.image}" alt="${recipe.title}">
+            <h3>${recipe.title}</h3>
+            <p>${recipe.description}</p>
+            ${
+                recipe.link
+                ? `<div class="button-container">
+                    <a href="${recipe.link}" class="view-link">Дізнатись більше</a>
+                   </div>`
+                : "" 
+            }
+            `;
+            recipeList.appendChild(recipeCard);
+        });
 }
+
+function filteredRecipes() {
+    const query = searchInput.value.toLowerCase();
+    const filtered = recipes.filter((recipe) =>
+        recipe.title.toLowCase().includes(query)
+    );
+    displayRecipes(filtered);
+}
+
+// Відображення всіх рецептів при завантаженні сторінки //
+displayRecipes(recipes);
+serchInput.addEventListener("input", filteredRecipes)
